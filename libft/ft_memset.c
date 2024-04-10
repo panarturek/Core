@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arosinsk <arosinsk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 22:20:50 by arosinsk          #+#    #+#             */
-/*   Updated: 2024/04/09 20:41:12 by arosinsk         ###   ########.fr       */
+/*   Created: 2024/03/05 12:25:17 by arosinsk          #+#    #+#             */
+/*   Updated: 2024/04/04 20:17:35 by arosinsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*ptr;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	ptr = s;
+	while (n--)
+	{
+		*ptr++ = (unsigned char)c;
+	}
+	return (s);
 }
+
+/* The  memset()  function  fills  the  first  n  bytes of the memory area
+		pointed to by s with the constant byte c.
+ */
